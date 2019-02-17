@@ -1,0 +1,50 @@
+/**
+ * 
+ */
+package com.tripplanverify.com;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import com.tripplanner.com.com.tripplanner.com.tripselect;
+
+/**
+ * @author ashwi_000
+ *
+ */
+public class verifytripselection 
+
+{
+	@Test
+	
+	public void verifytrip()
+	
+	{
+	
+	System.setProperty("webdriver.chrome.driver",".\\drivers\\chromedriver.exe");
+	
+	WebDriver driver = new ChromeDriver();
+	
+	driver.get("https://transportnsw.info");
+	
+	driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS); 
+	
+	
+	tripselect trip = new tripselect(driver);
+	
+	trip.searchfrom("North Sydney Station");
+	
+	
+	trip.searchto("Town Hall Station");
+	trip.submit();
+	
+	driver.quit();
+	
+	
+	}
+
+}

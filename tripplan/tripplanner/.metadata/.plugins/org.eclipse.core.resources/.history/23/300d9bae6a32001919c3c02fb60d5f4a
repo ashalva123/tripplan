@@ -1,0 +1,87 @@
+package com.tripplanner.com.com.tripplanner.com;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class tripselectionold {
+	
+	
+	
+	public static void main(String[] args) throws InterruptedException {
+
+		
+		System.setProperty("webdriver.chrome.driver", "C://Users//ashwi_000//Desktop//Selenium libs//chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://transportnsw.info");
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		
+		
+		
+		
+		//@FindBy(xpath="//label[contains(text(),'From')]//following::input[1]") WebElement From;
+		
+		WebElement from = driver.findElement(By.xpath("//label[contains(text(),'From')]//following::input[1]"));
+		
+		from.sendKeys("North Sydney Station");
+		
+		List <WebElement> list = driver.findElements(By.xpath("//div[@class='autosuggest-container']//div[@class='list-group-item-title']"));
+		
+		
+		System.out.println(list.size());
+		for(int i=0;i<list.size();i++)
+			{
+			
+				System.out.println(list.get(i).getText());
+			
+				if(list.get(i).getText().contains("North Sydney Station"))
+				{
+				list.get(i).click();
+		
+		break;
+				}
+			
+			}   
+		
+		
+		WebElement to = driver.findElement(By.xpath("//label[contains(text(),'To')]//following::input[1]"));
+		to.sendKeys("Museum Station");
+		
+		List <WebElement> list1 = driver.findElements(By.xpath("//div[@class='autosuggest-container']//div[@class='list-group-item-title']"));
+		
+		
+		
+		System.out.println(list1.size());
+		for(int i=0;i<list1.size();i++)
+			{
+			
+				System.out.println(list1.get(i).getText());
+			
+				if(list1.get(i).getText().contains("Museum Station"))
+				{
+				list1.get(i).click();
+		
+		break;
+				}
+			
+			}   
+		
+		driver.findElement(By.xpath("//*[@class='btn btn-primary go-btn']")).click();
+		
+		
+		
+		
+		
+	}
+
+}

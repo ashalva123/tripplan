@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="23569" started-at="2019-02-17T04:42:23Z" finished-at="2019-02-17T04:42:47Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="23569" started-at="2019-02-17T04:42:23Z" finished-at="2019-02-17T04:42:47Z">
+      <class name="com.tripplanverify.com.verifytripselection">
+        <test-method status="PASS" signature="verifytrip()[pri:0, instance:com.tripplanverify.com.verifytripselection@77caeb3e]" name="verifytrip" duration-ms="23530" started-at="2019-02-17T15:42:23Z" finished-at="2019-02-17T15:42:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifytrip -->
+      </class> <!-- com.tripplanverify.com.verifytripselection -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
